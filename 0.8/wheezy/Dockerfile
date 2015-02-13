@@ -1,4 +1,4 @@
-FROM buildpack-deps:wheezy
+FROM resin/rpi-buildpack-deps:wheezy
 
 # verify gpg and sha256: http://nodejs.org/dist/v0.10.30/SHASUMS256.txt.asc
 # gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>"

@@ -10,9 +10,10 @@ cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 
 versions=( */ )
 versions=( "${versions[@]%/}" )
-url='git://github.com/joyent/docker-node'
+url='git://github.com/resin-io-library/docker-node'
 
 echo '# maintainer: Joyent Image Team <image-team@joyent.com> (@joyent)'
+echo '# maintainer: Trong Nghia Nguyen - resin.io <james@resin.io>'
 
 for version in "${versions[@]}"; do
 	commit="$(git log -1 --format='format:%H' -- "$version")"
