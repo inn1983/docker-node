@@ -19,4 +19,3 @@ RUN buildDeps='curl' \
 # see also https://github.com/docker-library/node/issues/15#issuecomment-57879931
 
 CMD [ "node" ]
-http://resin-packages.s3.amazonaws.com/node/v0.10.2/node-v0.10.2-linux-armv6hf.tar.gz
