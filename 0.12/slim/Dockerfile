@@ -14,7 +14,4 @@ RUN buildDeps='curl' \
 	&& npm install -g npm@"$NPM_VERSION" \
 	&& npm cache clear
 
-# note: we have to install npm 1.4.28 first because we can't go straight from 1.2 -> 2.0
-# see also https://github.com/docker-library/node/issues/15#issuecomment-57879931
-
 CMD [ "node" ]
