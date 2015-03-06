@@ -3,7 +3,7 @@ set -e
 
 declare -A aliases
 aliases=(
-	[0.12.0]='0.12 latest' [0.10.36]='0.10' [0.11.16]='0.11' [0.9.12]='0.9' [0.8.28]='0.8'
+	[0.12.0]='0 latest'
 )
 
 cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
@@ -27,7 +27,7 @@ for repo in "${repos[@]}"; do
 	for version in "${versions[@]}"; do
 		commit="$(git log -1 --format='format:%H' -- "$repo/$version")"
 		fullVersion="$(grep -m1 'ENV NODE_VERSION ' "$repo/$version/Dockerfile" | cut -d' ' -f3)"
-		versionAliases=( $fullVersion $version ${aliases[$version]} )
+		versionAliases=( $fullVersion $version ${aliases[$fullVersion]} )
 
 		echo
 		for va in "${versionAliases[@]}"; do
@@ -46,5 +46,21 @@ for repo in "${repos[@]}"; do
 				echo "$va: ${url}@${commit} $repo/$version/$variant"
 			done
 		done
+
+		# Only for armv7hf
+		if [ $repo == 'armv7hf' ]; then
+			variant='sid'
+			commit="$(git log -1 --format='format:%H' -- "$repo/$version/$variant")"
+			echo
+			for va in "${versionAliases[@]}"; do
+				if [ "$va" = 'latest' ]; then
+					va="$variant"
+				else
+					va="$va-$variant"
+				fi
+				echo "$va: ${url}@${commit} $repo/$version/$variant"
+			done
+		fi
+
 	done
 done
