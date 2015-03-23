@@ -2,12 +2,12 @@
 FROM resin/i386-buildpack-deps:wheezy
 
 ENV NODE_VERSION 0.11.16
-ENV NPM_VERSION 2.5.0
+ENV NPM_VERSION 2.7.1
 
-RUN curl -SLO "http://nodejs.org/dist/v0.11.16/node-v0.11.16-linux-x86.tar.gz" \
+RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x86.tar.gz" \
-	&& npm install -g npm@"$NPM_VERSION" \
+	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm cache clear
 
 CMD [ "node" ]

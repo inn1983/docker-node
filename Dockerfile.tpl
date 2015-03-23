@@ -2,12 +2,12 @@
 FROM #{FROM}
 
 ENV NODE_VERSION #{NODE_VERSION}
-ENV NPM_VERSION 2.5.0
+ENV NPM_VERSION 2.7.1
 
 RUN curl -SLO "#{BINARY_URL}" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" \
-	&& npm install -g npm@"$NPM_VERSION" \
+	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
 	&& npm cache clear
 
 CMD [ "node" ]

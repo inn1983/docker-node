@@ -3,8 +3,8 @@ set -e
 
 repos='armv7hf rpi i386'
 nodeVersions='0.9.12 '
-resinUrl="http://resin-packages.s3.amazonaws.com/node/v#{NODE_VERSION}/node-v#{NODE_VERSION}-linux-#{TARGET_ARCH}.tar.gz"
-nodejsUrl="http://nodejs.org/dist/v#{NODE_VERSION}/node-v#{NODE_VERSION}-linux-#{TARGET_ARCH}.tar.gz"
+resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
+nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 
 #0.10.x
 nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 36)
