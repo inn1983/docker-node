@@ -2,7 +2,7 @@
 FROM resin/i386-buildpack-deps:jessie
 
 ENV NODE_VERSION 0.9.12
-ENV NPM_VERSION 2.7.1
+ENV NPM_VERSION 2.7.3
 
 RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x86.tar.gz" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x86.tar.gz" -C /usr/local --strip-components=1 \

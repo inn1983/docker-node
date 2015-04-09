@@ -2,7 +2,7 @@
 set -e
 
 repos='armv7hf rpi i386'
-nodeVersions='0.9.12 0.10.36 0.11.16 0.12.0'
+nodeVersions='0.9.12 0.10.38 0.11.16 0.12.2'
 resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 

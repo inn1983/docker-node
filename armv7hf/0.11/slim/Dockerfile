@@ -2,7 +2,7 @@
 FROM resin/armv7hf-debian:jessie
 
 ENV NODE_VERSION 0.11.16
-ENV NPM_VERSION 2.7.1
+ENV NPM_VERSION 2.7.3
 
 RUN buildDeps='curl' \
 	&& set -x \

@@ -7,13 +7,13 @@ resinUrl="http://resin-packages.s3.amazonaws.com/node/v\$NODE_VERSION/node-v\$NO
 nodejsUrl="http://nodejs.org/dist/v\$NODE_VERSION/node-v\$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz"
 
 #0.10.x
-nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 36)
+nodeVersions+=$(seq -f "0.10.%g" -s ' ' 0 38)
 nodeVersions+=' '
 #0.11.x
 nodeVersions+=$(seq -f "0.11.%g" -s ' ' 0 16)
 nodeVersions+=' '
 #0.12.x
-nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 0)
+nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 2)
 
 for repo in $repos; do
 	case "$repo" in
