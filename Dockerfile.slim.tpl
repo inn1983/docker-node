@@ -13,6 +13,7 @@ RUN buildDeps='curl' \
 	&& rm "node-v$NODE_VERSION-linux-#{TARGET_ARCH}.tar.gz" \
 	&& apt-get purge -y --auto-remove $buildDeps \
 	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
-	&& npm cache clear
+	&& npm cache clear \
+	&& rm -rf /tmp/*
 
 CMD [ "node" ]
