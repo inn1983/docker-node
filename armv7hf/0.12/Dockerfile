@@ -8,6 +8,7 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& npm install -g npm@"$NPM_VERSION" --unsafe-perm \
-	&& npm cache clear
+	&& npm cache clear \
+	&& rm -rf /tmp/*
 
 CMD [ "node" ]
