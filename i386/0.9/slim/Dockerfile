@@ -2,7 +2,7 @@
 FROM resin/i386-debian:jessie
 
 ENV NODE_VERSION 0.9.12
-ENV NPM_VERSION 2.7.3
+ENV NPM_VERSION 2.10.1
 
 RUN buildDeps='curl' \
 	&& set -x \

@@ -13,7 +13,7 @@ nodeVersions+=' '
 nodeVersions+=$(seq -f "0.11.%g" -s ' ' 0 16)
 nodeVersions+=' '
 #0.12.x
-nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 2)
+nodeVersions+=$(seq -f "0.12.%g" -s ' ' 0 4)
 
 for repo in $repos; do
 	case "$repo" in

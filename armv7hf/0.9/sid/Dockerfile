@@ -2,7 +2,7 @@
 FROM resin/armv7hf-buildpack-deps:sid
 
 ENV NODE_VERSION 0.9.12
-ENV NPM_VERSION 2.7.3
+ENV NPM_VERSION 2.10.1
 
 RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v$NODE_VERSION-linux-armv7hf.tar.gz" \
 	&& tar -xzf "node-v$NODE_VERSION-linux-armv7hf.tar.gz" -C /usr/local --strip-components=1 \
