@@ -12,5 +12,6 @@ RUN curl -SLO "http://resin-packages.s3.amazonaws.com/node/v$NODE_VERSION/node-v
 	&& rm -rf /tmp/*
 RUN apt-get update
 RUN apt-get install -y vim nano
+RUN apt-get install -y v4l-utils
 
 CMD [ "node" ]
